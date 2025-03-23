@@ -6,7 +6,7 @@
     <title>Nepali Football</title>
 
     <!-- Tailwind CSS CDN include gareko cha -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         // Nepali football ko top players haru ko details rakheko cha
@@ -50,10 +50,10 @@
         window.onload = displayPlayers;
     </script>
 </head>
-<body class="bg-[url('main.avif')] bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center text-white">
+<body class="bg-[url('main.avif')] bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center text-white pt-[80px]">
 
     <!-- ✅ Navbar suru -->
-    <div class="fixed top-4 left-1/2 -translate-x-1/2 w-[900px] bg-black/80 text-white shadow-black-xl opacity-md rounded-lg p-4">
+    <div class="fixed top-5 left-1/2 -translate-x-1/2 w-[900px] bg-black/80 text-white shadow-xl rounded-b-lg p-4 z-50">
         <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="text-xl font-semibold">Nepali Football</span>
@@ -68,24 +68,30 @@
     <!-- ✅ Navbar sakiyo -->
 
     <!-- ✅ Introduction Section suru -->
-    <div class="mt-24 w-[900px] bg-black/60 p-6 rounded-lg text-center">
-        <h1 class="text-3xl font-bold text-yellow-400 mb-4">Nepali Football</h1>
-        <p class="text-lg leading-relaxed">
+    <div class="mt-12 max-w-3xl mx-auto bg-black/50 p-8 rounded-xl text-center backdrop-blur-lg shadow-lg border border-gray-700 animate-fadeIn">
+        <h1 class="text-4xl font-extrabold text-yellow-400 mb-6 tracking-wide drop-shadow-lg">Nepali Football</h1>
+
+        <p class="text-lg leading-relaxed text-gray-200">
             Football in Nepal is more than just a sport—it is a passion that unites the nation. With a history dating back to the early 20th century, Nepali football has grown despite various challenges.
         </p>
-        <p class="text-lg leading-relaxed mt-3">
-            The All Nepal Football Association (ANFA) was established in 1951 and became a member of FIFA in 1970. Since then, Nepal has participated in numerous regional and international tournaments.
-            The national team, known as the "Gorkhalis," won the SAFF Championship in 1993 and has continued to develop its footballing standards.
+
+        <p class="text-lg leading-relaxed mt-4 text-gray-300">
+            The <span class="text-yellow-300 font-semibold">All Nepal Football Association (ANFA)</span> was established in 1951 and became a member of FIFA in 1970. Since then, Nepal has participated in numerous regional and international tournaments.
+            The national team, known as the <span class="text-yellow-300 font-semibold">"Gorkhalis,"</span> won the SAFF Championship in 1993 and has continued to develop its footballing standards.
         </p>
-        <p class="text-lg leading-relaxed mt-3">
-            Nepal’s Martyr’s Memorial A-Division League is the country’s top domestic football league, featuring clubs such as Manang Marshyangdi Club, Tribhuvan Army Club, and Machhindra FC.
-            Players like Rohit Chand have gained international recognition by playing in foreign leagues, helping put Nepal on the global football map.
+
+        <p class="text-lg leading-relaxed mt-4 text-gray-300">
+            Nepal’s <span class="text-yellow-300 font-semibold">Martyr’s Memorial A-Division League</span> is the country’s top domestic football league, featuring clubs such as
+            <span class="font-semibold">Manang Marshyangdi Club</span>, <span class="font-semibold">Tribhuvan Army Club</span>, and <span class="font-semibold">Machhindra FC</span>.
+            Players like <span class="text-yellow-300 font-semibold">Rohit Chand</span> have gained international recognition by playing in foreign leagues, helping put Nepal on the global football map.
         </p>
-        <p class="text-lg leading-relaxed mt-3">
-            While challenges like infrastructure and funding remain, Nepali football is steadily progressing. With passionate fans, emerging talents, and growing exposure, the future of Nepali football looks bright!
+
+        <p class="text-lg leading-relaxed mt-4 text-gray-300">
+            While challenges like infrastructure and funding remain, Nepali football is steadily progressing. With <span class="text-yellow-300 font-semibold">passionate fans</span>, <span class="text-yellow-300 font-semibold">emerging talents</span>,
+            and <span class="text-yellow-300 font-semibold">growing exposure</span>, the future of Nepali football looks bright! ⚽✨
         </p>
     </div>
-    <!-- ✅ Nepali Football Section sakiyo -->
+    <!-- ✅ Introduction Section sakiyo -->
 
     <!-- ✅ Players Section suru -->
     <div id="players-section" class="mt-20 w-[1000px]">
