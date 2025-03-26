@@ -4,101 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nepali Football</title>
-
-    <!-- Tailwind CSS CDN include gareko cha -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
-        // Nepali football ko top players haru ko details rakheko cha
         const players = [
-            { "name": "Kiran Chemjong", "img": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Kiran_Chemjong.jpg", "description": "Nepal's first-choice goalkeeper and captain, known for his leadership and shot-stopping skills." },
-            { "name": "Anjan Bista", "img": "https://www.nepal90.com/media/player/Anjan_Bista.jpg", "description": "A top goal-scorer for Nepal, playing as a dynamic forward with great finishing ability." },
-            { "name": "Sujal Shrestha", "img": "https://www.nepal90.com/media/player/Sujal_Shrestha.jpg", "description": "A creative midfielder known for his playmaking and vision on the field." },
-            { "name": "Rohit Chand", "img": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Rohit_Chand.jpg", "description": "One of Nepal’s most successful players, playing in Indonesia as a defensive midfielder." },
-            { "name": "Bimal Gharti Magar", "img": "https://www.nepal90.com/media/player/Bimal_Gharti_Magar.jpg", "description": "A talented young striker who became Nepal's youngest goal-scorer." },
-            { "name": "Manish Dangi", "img": "https://www.nepal90.com/media/player/Manish_Dangi.jpg", "description": "A promising winger known for his speed and dribbling ability." },
-            { "name": "Santosh Tamang", "img": "https://www.nepal90.com/media/player/Santosh_Tamang.jpg", "description": "A solid defensive midfielder, crucial for Nepal's midfield stability." },
-            { "name": "Nirajan Khadka", "img": "https://www.nepal90.com/media/player/Nirajan_Khadka.jpg", "description": "An experienced midfielder who has played a vital role in Nepal’s SAFF success." },
-            { "name": "Suman Lama", "img": "https://www.nepal90.com/media/player/Suman_Lama.jpg", "description": "A versatile attacking midfielder with technical skills and great vision." },
-            { "name": "Tej Tamang", "img": "https://www.nepal90.com/media/player/Tej_Tamang.jpg", "description": "A hardworking midfielder known for his defensive contributions and passing." },
-            { "name": "Abhishek Rijal", "img": "https://www.nepal90.com/media/player/Abhishek_Rijal.jpg", "description": "A young striker who has played in India and is a rising star for Nepal." }
+            { "name": "Kiran Chemjong", "img": "" },
+            { "name": "Anjan Bista", "img": "", "description": "A top goal-scorer for Nepal, playing as a dynamic forward with great finishing ability." },
+            { "name": "Sujal Shrestha", "img": "", "description": "A creative midfielder known for his playmaking and vision on the field." },
+            { "name": "Rohit Chand", "img": "" },
+            { "name": "Bimal Gharti Magar", "img": "", "description": "A talented young striker who became Nepal's youngest goal-scorer." },
+            { "name": "Manish Dangi", "img": "", "description": "A promising winger known for his speed and dribbling ability." },
+            { "name": "Santosh Tamang", "img": "", "description": "A solid defensive midfielder, crucial for Nepal's midfield stability." },
+            { "name": "Nirajan Khadka", "img": "", "description": "An experienced midfielder who has played a vital role in Nepal’s SAFF success." },
+            { "name": "Suman Lama", "img": "", "description": "A versatile attacking midfielder with technical skills and great vision." },
+            { "name": "Tej Tamang", "img": "", "description": "A hardworking midfielder known for his defensive contributions and passing." },
+            { "name": "Abhishek Rijal", "img": "", "description": "A young striker who has played in India and is a rising star for Nepal." }
         ];
-
-        // Players haru display garne function
-        function displayPlayers() {
-            const playerContainer = document.getElementById("players-list");
-            playerContainer.innerHTML = "";
-
-            players.forEach(player => {
-                const playerCard = `
-                    <div class="bg-gray-800 rounded-lg shadow-lg p-4 text-center w-[250px] h-[350px] mx-4">
-                        <img src="${player.img}" alt="${player.name}" class="w-32 h-32 mx-auto rounded-full border-4 border-yellow-400">
-                        <h2 class="text-xl font-bold mt-3 text-yellow-400">${player.name}</h2>
-                        <p class="text-sm text-gray-300 mt-2">${player.description}</p>
-                    </div>
-                `;
-                playerContainer.innerHTML += playerCard;
-            });
-        }
-
-        // "Players" section ma smoothly scroll garne function
-        function scrollToPlayers() {
-            document.getElementById("players-section").scrollIntoView({ behavior: "smooth" });
-        }
-
-        // Page load hune bittikai players display huncha
-        window.onload = displayPlayers;
     </script>
 </head>
-<body class="bg-[url('main.avif')] bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center text-white pt-[80px]">
+<body class="bg-slate-900  bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center text-white">
 
-    <!-- ✅ Navbar suru -->
-    <div class="fixed top-5 left-1/2 -translate-x-1/2 w-[900px] bg-black/80 text-white shadow-xl rounded-b-lg p-4 z-50">
+    <!-- Navbar -->
+    <div class="fixed top-4 left-1/2 -translate-x-1/2 max-w-[900px] w-full bg-black/80 text-white shadow-lg rounded-lg p-4">
         <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <span class="text-xl font-semibold">Nepali Football</span>
-            </div>
-            <ul class="flex list-none gap-12 text-lg font-medium">
-                <li onclick="scrollToPlayers()" class="hover:text-gray-200 cursor-pointer">Players</li>
-                <li class="hover:text-gray-200 cursor-pointer">Matches</li>
-                <li class="hover:text-gray-200 cursor-pointer">Contact Us</li>
+            <div class="text-xl font-semibold">Nepali Football</div>
+            <ul class="hidden md:flex list-none gap-12 text-lg font-medium">
+                <li id="players-link" class="relative cursor-pointer hover:text-yellow-400 after:absolute after:w-full after:h-0.5 after:bg-yellow-400 after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
+                    Players
+                </li>
+                <li class="relative cursor-pointer hover:text-yellow-400 after:absolute after:w-full after:h-0.5 after:bg-yellow-400 after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
+                    Matches
+                </li>
+                <li class="relative cursor-pointer hover:text-yellow-400 after:absolute after:w-full after:h-0.5 after:bg-yellow-400 after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
+                    Contact Us
+                </li>
             </ul>
         </div>
     </div>
-    <!-- ✅ Navbar sakiyo -->
 
-    <!-- ✅ Introduction Section suru -->
-    <div class="mt-12 max-w-3xl mx-auto bg-black/50 p-8 rounded-xl text-center backdrop-blur-lg shadow-lg border border-gray-700 animate-fadeIn">
-        <h1 class="text-4xl font-extrabold text-yellow-400 mb-6 tracking-wide drop-shadow-lg">Nepali Football</h1>
-
-        <p class="text-lg leading-relaxed text-gray-200">
-            Football in Nepal is more than just a sport—it is a passion that unites the nation. With a history dating back to the early 20th century, Nepali football has grown despite various challenges.
-        </p>
-
-        <p class="text-lg leading-relaxed mt-4 text-gray-300">
-            The <span class="text-yellow-300 font-semibold">All Nepal Football Association (ANFA)</span> was established in 1951 and became a member of FIFA in 1970. Since then, Nepal has participated in numerous regional and international tournaments.
-            The national team, known as the <span class="text-yellow-300 font-semibold">"Gorkhalis,"</span> won the SAFF Championship in 1993 and has continued to develop its footballing standards.
-        </p>
-
-        <p class="text-lg leading-relaxed mt-4 text-gray-300">
-            Nepal’s <span class="text-yellow-300 font-semibold">Martyr’s Memorial A-Division League</span> is the country’s top domestic football league, featuring clubs such as
-            <span class="font-semibold">Manang Marshyangdi Club</span>, <span class="font-semibold">Tribhuvan Army Club</span>, and <span class="font-semibold">Machhindra FC</span>.
-            Players like <span class="text-yellow-300 font-semibold">Rohit Chand</span> have gained international recognition by playing in foreign leagues, helping put Nepal on the global football map.
-        </p>
-
-        <p class="text-lg leading-relaxed mt-4 text-gray-300">
-            While challenges like infrastructure and funding remain, Nepali football is steadily progressing. With <span class="text-yellow-300 font-semibold">passionate fans</span>, <span class="text-yellow-300 font-semibold">emerging talents</span>,
-            and <span class="text-yellow-300 font-semibold">growing exposure</span>, the future of Nepali football looks bright! ⚽✨
-        </p>
+     <!-- Introduction Section -->
+   <div class="mt-24 w-full max-w-[900px] bg-black/60 p-6 rounded-lg text-center mx-4">
+    <h1 class="text-3xl font-bold text-yellow-400 mb-4">Nepali Football</h1>
+    <p class="text-lg leading-relaxed">
+        Football in Nepal is more than just a sport—it’s a symbol of passion, unity, and pride. With a history dating back to the early 20th century, Nepali football has evolved despite challenges.  
+    </p>
+    <p class="text-lg leading-relaxed mt-3">
+        The All Nepal Football Association (ANFA) was established in 1951 and joined FIFA in 1970. Since then, Nepal has participated in multiple regional and international tournaments.
+        The national team, known as the "Gorkhalis," won the SAFF Championship in 1993 and continues to strive for excellence.  
+    </p>
+    <p class="text-lg leading-relaxed mt-3">
+        Nepal’s Martyr’s Memorial A-Division League is the country’s top domestic league, featuring clubs like Manang Marshyangdi Club, Tribhuvan Army Club, and Machhindra FC.  
+        Players like Rohit Chand have gained international recognition by playing in foreign leagues, helping put Nepal on the global football map.
+    </p>
+    <p class="text-lg leading-relaxed mt-3">
+        While challenges like infrastructure and funding persist, Nepali football is making steady progress. With passionate fans, rising talents, and increased exposure, the future of Nepali football is bright!  
+    </p>
+</div>
     </div>
-    <!-- ✅ Introduction Section sakiyo -->
 
-    <!-- ✅ Players Section suru -->
-    <div id="players-section" class="mt-20 w-[1000px]">
-        <h2 class="text-2xl font-bold text-yellow-400 text-center">Meet the Players</h2>
-        <div id="players-list" class="mt-6 flex flex-wrap justify-center gap-6 p-6"></div>
+    <!-- Players Section -->
+    <div id="players-section" class="mt-10 w-full max-w-[900px] bg-black/60 p-6 rounded-lg mx-4">
+        <h2 class="text-2xl font-bold text-yellow-400 mb-4 text-center">Nepal National Football Team</h2>
+        <div id="players-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
     </div>
-    <!-- ✅ Players Section sakiyo -->
+
+    <script>
+        // Generate Player Cards Dynamically
+        const playersContainer = document.getElementById("players-container");
+
+        players.forEach(player => {
+            const playerCard = document.createElement("div");
+            playerCard.className = "bg-black/70 p-4 rounded-lg text-center shadow-lg hover:scale-105 transition-transform duration-300";
+            
+            playerCard.innerHTML = `
+                <img src="${player.img}" alt="${player.name}" class="w-32 h-32 object-cover rounded-full mx-auto border-2 border-yellow-400">
+                <h3 class="text-xl font-semibold mt-2">${player.name}</h3>
+                <p class="text-sm mt-1">${player.description}</p>
+            `;
+
+            playersContainer.appendChild(playerCard);
+        });
+
+        // Smooth Scroll Function
+        document.getElementById("players-link").addEventListener("click", () => {
+            document.getElementById("players-section").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
 
 </body>
 </html>
