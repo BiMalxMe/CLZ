@@ -6,6 +6,7 @@
     <title>Nepali Football</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Player haruko data
         const players = [
     { 
         "name": "Kiran Chemjong", 
@@ -25,7 +26,7 @@
     { 
         "name": "Rohit Chand", 
         "img": "./Rohit.jpg", 
-        "description": "One of Nepal’s most successful footballers, a versatile defensive midfielder and defender who has played in top leagues, known for his composure and tactical intelligence." 
+        "description": "One of Nepal's most successful footballers, a versatile defensive midfielder and defender who has played in top leagues, known for his composure and tactical intelligence." 
     },
     { 
         "name": "Bimal Gharti Magar", 
@@ -45,7 +46,7 @@
     { 
         "name": "Nirajan Khadka", 
         "img": "./Nirajan.jpg", 
-        "description": "An experienced midfielder who has played a vital role in Nepal’s SAFF success." 
+        "description": "An experienced midfielder who has played a vital role in Nepal's SAFF success." 
     },
     { 
         "name": "Suman Lama", 
@@ -64,74 +65,108 @@
     }
 ];
 
+// Match haruko data
+const matches = [
+    { "date": "2024-03-20", "teams": "Nepal vs Pakistan", "venue": "Dasarath Stadium, Nepal" },
+    { "date": "2024-04-05", "teams": "Nepal vs Sri Lanka", "venue": "Colombo Stadium, Sri Lanka" },
+    { "date": "2024-05-12", "teams": "Nepal vs UAE", "venue": "Zayed Sports City, UAE" },
+    { "date": "2024-06-15", "teams": "Nepal vs India", "venue": "Dashrath Stadium, Nepal" },
+    { "date": "2024-07-10", "teams": "Nepal vs Bangladesh", "venue": "Bangabandhu Stadium, Bangladesh" },
+    { "date": "2024-08-05", "teams": "Nepal vs Maldives", "venue": "National Stadium, Maldives" },
+    { "date": "2024-09-20", "teams": "Nepal vs Bhutan", "venue": "Changlimithang Stadium, Bhutan" },
+    { "date": "2024-10-12", "teams": "Nepal vs Qatar", "venue": "Khalifa International Stadium, Qatar" },
+    { "date": "2024-11-18", "teams": "Nepal vs Thailand", "venue": "Rajamangala Stadium, Thailand" },
+    { "date": "2024-12-05", "teams": "Nepal vs Malaysia", "venue": "Bukit Jalil Stadium, Malaysia" }
+];
+
+
     </script>
 </head>
-<body class="bg-slate-900  bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center text-white">
+<body class="bg-slate-900 min-h-screen flex flex-col items-center text-white">
 
     <!-- Navbar -->
-    <div class="fixed top-4 left-1/2 -translate-x-1/2 max-w-[900px] w-full bg-black/80 text-white shadow-lg rounded-lg p-4">
+    <div class="fixed top-4  max-w-[900px] w-full bg-black/80 text-white shadow-lg rounded-lg p-4">
         <div class="flex items-center justify-between">
             <div class="text-xl font-semibold">Nepali Football</div>
             <ul class="hidden md:flex list-none gap-12 text-lg font-medium">
-                <li id="players-link" class="relative cursor-pointer hover:text-yellow-400 after:absolute after:w-full after:h-0.5 after:bg-yellow-400 after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
-                    Players
-                </li>
-                <li class="relative cursor-pointer hover:text-yellow-400 after:absolute after:w-full after:h-0.5 after:bg-yellow-400 after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
-                    Matches
-                </li>
-                <li class="relative cursor-pointer hover:text-yellow-400 after:absolute after:w-full after:h-0.5 after:bg-yellow-400 after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
-                    Contact Us
-                </li>
+                <li class="cursor-pointer hover:text-yellow-400" onclick="scrollToSection('players-section')">Players</li>
+                <li class="cursor-pointer hover:text-yellow-400" onclick="scrollToSection('matches-section')">Matches</li>
+                <li class="cursor-pointer hover:text-yellow-400" onclick="scrollToSection('contact-section')">Contact Us</li>
             </ul>
         </div>
     </div>
 
-     <!-- Introduction Section -->
-   <div class="mt-24 w-full max-w-[900px] bg-black/60 p-6 rounded-lg text-center mx-4">
-    <h1 class="text-3xl font-bold text-yellow-400 mb-4">Nepali Football</h1>
-    <p class="text-lg leading-relaxed">
-        Football in Nepal is more than just a sport—it’s a symbol of passion, unity, and pride. With a history dating back to the early 20th century, Nepali football has evolved despite challenges.  
-    </p>
-    <p class="text-lg leading-relaxed mt-3">
-        The All Nepal Football Association (ANFA) was established in 1951 and joined FIFA in 1970. Since then, Nepal has participated in multiple regional and international tournaments.
-        The national team, known as the "Gorkhalis," won the SAFF Championship in 1993 and continues to strive for excellence.  
-    </p>
-    <p class="text-lg leading-relaxed mt-3">
-        Nepal’s Martyr’s Memorial A-Division League is the country’s top domestic league, featuring clubs like Manang Marshyangdi Club, Tribhuvan Army Club, and Machhindra FC.  
-        Players like Rohit Chand have gained international recognition by playing in foreign leagues, helping put Nepal on the global football map.
-    </p>
-    <p class="text-lg leading-relaxed mt-3">
-        While challenges like infrastructure and funding persist, Nepali football is making steady progress. With passionate fans, rising talents, and increased exposure, the future of Nepali football is bright!  
-    </p>
-</div>
+    <!-- Introduction Section -->
+    <div class="mt-24 w-full max-w-[900px] bg-black/60 p-6 rounded-lg text-center mx-4">
+        <h1 class="text-3xl font-bold text-yellow-400 mb-4">Nepali Football</h1>
+        <p class="text-lg leading-relaxed">
+            Football in Nepal is more than just a sport—it's a symbol of passion, unity, and pride. With a history dating back to the early 20th century, Nepali football has evolved despite challenges.  
+        </p>
+        <p class="text-lg leading-relaxed mt-3">
+            The All Nepal Football Association (ANFA) was established in 1951 and joined FIFA in 1970. Since then, Nepal has participated in multiple regional and international tournaments.
+            The national team, known as the "Gorkhalis," won the SAFF Championship in 1993 and continues to strive for excellence.  
+        </p>
+        <p class="text-lg leading-relaxed mt-3">
+            Nepal's Martyr's Memorial A-Division League is the country's top domestic league, featuring clubs like Manang Marshyangdi Club, Tribhuvan Army Club, and Machhindra FC.  
+            Players like Rohit Chand have gained international recognition by playing in foreign leagues, helping put Nepal on the global football map.
+        </p>
+        <p class="text-lg leading-relaxed mt-3">
+            While challenges like infrastructure and funding persist, Nepali football is making steady progress. With passionate fans, rising talents, and increased exposure, the future of Nepali football is bright!  
+        </p>
     </div>
-
+        </div>
     <!-- Players Section -->
     <div id="players-section" class="mt-10 w-full max-w-[900px] bg-black/60 p-6 rounded-lg mx-4">
         <h2 class="text-2xl font-bold text-yellow-400 mb-4 text-center">Nepal National Football Team</h2>
         <div id="players-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
     </div>
 
-    <script>
-        // Generate Player Cards Dynamically
-        const playersContainer = document.getElementById("players-container");
+    <!-- Matches Section -->
+    <div id="matches-section" class="mt-10 w-full max-w-[900px] bg-black/60 p-6 rounded-lg mx-4 ">
+        <h2 class="text-2xl font-bold text-yellow-400 mb-4 text-center">Recent Matches</h2>
+        <div id="matches-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6 "></div>
+    </div>
 
+    <!-- Contact Section -->
+    <div id="contact-section" class="mt-10 w-full max-w-[900px] bg-black/60 p-6 rounded-lg mx-4">
+        <h2 class="text-2xl font-bold text-yellow-400 mb-4 text-center">Contact Us</h2>
+        <form class="flex flex-col gap-4">
+            <input type="text" placeholder="Your Name" class="p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none">
+            <input type="email" placeholder="Your Email" class="p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none">
+            <textarea placeholder="Your Message" class="p-3 rounded bg-gray-800 text-white border border-yellow-400 focus:outline-none h-32"></textarea>
+            <button type="submit" class="p-3 bg-yellow-400 text-black font-semibold rounded hover:bg-yellow-500 transition">Send Message</button>
+        </form>
+    </div>
+
+    <script>
+        // Section haru ma scroll garna function
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Player haru display garna
+        const playersContainer = document.getElementById("players-container");
         players.forEach(player => {
             const playerCard = document.createElement("div");
             playerCard.className = "bg-black/70 p-4 rounded-lg text-center shadow-lg hover:scale-105 transition-transform duration-300";
-            
             playerCard.innerHTML = `
                 <img src="${player.img}" alt="${player.name}" class="w-32 h-32 object-cover rounded-full mx-auto border-2 border-yellow-400">
                 <h3 class="text-xl font-semibold mt-2">${player.name}</h3>
                 <p class="text-sm mt-1">${player.description}</p>
             `;
-
             playersContainer.appendChild(playerCard);
         });
 
-        // Smooth Scroll Function
-        document.getElementById("players-link").addEventListener("click", () => {
-            document.getElementById("players-section").scrollIntoView({ behavior: "smooth" });
+        // Match haru display garna
+        const matchesContainer = document.getElementById("matches-container");
+        matches.forEach(match => {
+            const matchCard = document.createElement("div");
+            matchCard.className = "bg-black/70 p-4 rounded-lg text-center shadow-lg hover:bg-yellow-400 text-white";
+            matchCard.innerHTML = `
+                <h3 class="text-lg font-semibold">${match.teams}</h3>
+                <p class="text-sm">${match.date} | ${match.venue}</p>
+            `;
+            matchesContainer.appendChild(matchCard);
         });
     </script>
 
