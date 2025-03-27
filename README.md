@@ -1,7 +1,5 @@
-![01](https://github.com/user-attachments/assets/87a8e99e-363d-4389-b33e-e2a724d8dedb)
-![02](https://github.com/user-attachments/assets/79d46800-409d-482a-9e97-d662c7de4bae)
+## Garda Gardai Yetti Vayo halka responsive xa twra navbar banako xaina responsive hide matrai xa
 
+##**Video Xa Xlusice ;)
+[![Video Title](https://img.youtube.com/vi/8lIQHk3H-cc/0.jpg)](https://www.youtube.com/watch?v=8lIQHk3H-cc)
 
-
-##MissingAddings
-#add photos and other section such that the page will be completed
